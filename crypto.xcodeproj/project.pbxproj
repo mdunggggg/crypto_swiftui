@@ -21,6 +21,7 @@
 		531FFB872C462C29002BF9B2 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531FFB862C462C29002BF9B2 /* Double.swift */; };
 		531FFB892C464A7C002BF9B2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531FFB882C464A7C002BF9B2 /* HomeViewModel.swift */; };
 		531FFB8C2C4652AC002BF9B2 /* CoinDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531FFB8B2C4652AC002BF9B2 /* CoinDataRepository.swift */; };
+		531FFB8F2C4661C6002BF9B2 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531FFB8E2C4661C6002BF9B2 /* NetworkingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		531FFB862C462C29002BF9B2 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		531FFB882C464A7C002BF9B2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		531FFB8B2C4652AC002BF9B2 /* CoinDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataRepository.swift; sourceTree = "<group>"; };
+		531FFB8E2C4661C6002BF9B2 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				531FFB702C460978002BF9B2 /* Extensions */,
+				531FFB8D2C466189002BF9B2 /* Utilities */,
 				531FFB8A2C46527E002BF9B2 /* Repository */,
 				531FFB7F2C4615F5002BF9B2 /* Model */,
 				531FFB732C460B48002BF9B2 /* Core */,
@@ -169,6 +172,14 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		531FFB8D2C466189002BF9B2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				531FFB8E2C4661C6002BF9B2 /* NetworkingManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,6 +258,7 @@
 				531FFB7C2C460CB9002BF9B2 /* CircleButtonView.swift in Sources */,
 				531FFB722C46098B002BF9B2 /* Color.swift in Sources */,
 				531FFB7E2C460FC5002BF9B2 /* CircleButtonAnimationView.swift in Sources */,
+				531FFB8F2C4661C6002BF9B2 /* NetworkingManager.swift in Sources */,
 				531FFB852C4628C2002BF9B2 /* PreviewProvider.swift in Sources */,
 				531FFB872C462C29002BF9B2 /* Double.swift in Sources */,
 				531FFB8C2C4652AC002BF9B2 /* CoinDataRepository.swift in Sources */,
