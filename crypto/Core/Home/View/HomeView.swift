@@ -18,8 +18,9 @@ struct HomeView: View {
             
             VStack{
                 homeHeader
+                SearchBarView(searchText: $vm.searchText)
+                   
                 columnTitles
-                
                 if !showPortfolio {
                     allCoinsList.transition(.move(edge: .leading))
                 }
@@ -54,7 +55,7 @@ extension HomeView {
                     }
                 }
         }
-        .padding(.horizontal)
+       
     }
     
     private var allCoinsList : some View {
