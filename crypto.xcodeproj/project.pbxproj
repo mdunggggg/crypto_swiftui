@@ -10,7 +10,6 @@
 		531FFB612C4577E3002BF9B2 /* cryptoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531FFB602C4577E3002BF9B2 /* cryptoApp.swift */; };
 		531FFB632C4577E3002BF9B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531FFB622C4577E3002BF9B2 /* ContentView.swift */; };
 		531FFB682C4577E4002BF9B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 531FFB672C4577E4002BF9B2 /* Preview Assets.xcassets */; };
-		531FFB6F2C460919002BF9B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 531FFB6E2C460919002BF9B2 /* Assets.xcassets */; };
 		531FFB722C46098B002BF9B2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531FFB712C46098B002BF9B2 /* Color.swift */; };
 		531FFB782C460B7C002BF9B2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531FFB772C460B7C002BF9B2 /* HomeView.swift */; };
 		531FFB7C2C460CB9002BF9B2 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531FFB7B2C460CB9002BF9B2 /* CircleButtonView.swift */; };
@@ -28,6 +27,7 @@
 		53ECBCCF2C49645D00171810 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECBCCE2C49645D00171810 /* LocalFileManager.swift */; };
 		53ECBCD12C4971CD00171810 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECBCD02C4971CD00171810 /* SearchBarView.swift */; };
 		53ECBCD32C4976A000171810 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECBCD22C4976A000171810 /* UIApplication.swift */; };
+		53ECBCD52C4A5D4700171810 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53ECBCD42C4A5D4600171810 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,6 @@
 		531FFB602C4577E3002BF9B2 /* cryptoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cryptoApp.swift; sourceTree = "<group>"; };
 		531FFB622C4577E3002BF9B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		531FFB672C4577E4002BF9B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		531FFB6E2C460919002BF9B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/Resources/Assets.xcassets; sourceTree = "<group>"; };
 		531FFB712C46098B002BF9B2 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		531FFB772C460B7C002BF9B2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		531FFB7B2C460CB9002BF9B2 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		53ECBCCE2C49645D00171810 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		53ECBCD02C4971CD00171810 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		53ECBCD22C4976A000171810 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		53ECBCD42C4A5D4600171810 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +91,8 @@
 				531FFB7F2C4615F5002BF9B2 /* Model */,
 				531FFB732C460B48002BF9B2 /* Core */,
 				531FFB602C4577E3002BF9B2 /* cryptoApp.swift */,
+				53ECBCD42C4A5D4600171810 /* Assets.xcassets */,
 				531FFB622C4577E3002BF9B2 /* ContentView.swift */,
-				531FFB6E2C460919002BF9B2 /* Assets.xcassets */,
 				531FFB662C4577E4002BF9B2 /* Preview Content */,
 			);
 			path = crypto;
@@ -264,8 +264,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53ECBCD52C4A5D4700171810 /* Assets.xcassets in Resources */,
 				531FFB682C4577E4002BF9B2 /* Preview Assets.xcassets in Resources */,
-				531FFB6F2C460919002BF9B2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
