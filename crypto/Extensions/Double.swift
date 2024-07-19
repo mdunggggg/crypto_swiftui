@@ -49,4 +49,12 @@ extension Double {
     func asPercentString() -> String {
         return asNumberString() + "%"
     }
+
+}
+
+extension Double? {
+    func isPositive() -> Bool {
+        guard let num = self else {return false}
+        return num > 0
+    }
 }
