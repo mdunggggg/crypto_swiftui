@@ -9,18 +9,14 @@ import Foundation
 import Combine
 
 class HomeViewModel : ObservableObject {
-    @Published var statistics : [StatisticModel] = [
-        StatisticModel(title: "Title", value: "Value", percentageChange: 1),
-        StatisticModel(title: "Title", value: "Value"),
-        StatisticModel(title: "Title", value: "Value"),
-        StatisticModel(title: "Title", value: "Value", percentageChange: -7)
-    ]
+    @Published var statistics : [StatisticModel] = []
     @Published var allCoins : [CoinModel] = []
     @Published var portfoliosCoins : [CoinModel] = []
     
     @Published var searchText = ""
     
     private let coinRepo = CoinDataRepository()
+    private let marketRepo = MarketDataRepository()
     private var cancellables = Set<AnyCancellable>()
     
     init() {
@@ -37,6 +33,13 @@ class HomeViewModel : ObservableObject {
                 self?.allCoins = returnedValue
             }
             .store(in: &cancellables)
+        
+        marketRepo.$marketData
+            .map(mapGlobalMarketData)
+            .sink { [weak self] returnedValue in
+                self?.statistics = returnedValue
+            }.store(in: &cancellables)
+            
     }
     
     private func filterCoins(text : String, coins : [CoinModel]) -> [CoinModel]{
@@ -49,6 +52,19 @@ class HomeViewModel : ObservableObject {
                 || coin.symbol.lowercased().contains(lowercasedText)
                 || coin.id.lowercased().contains(lowercasedText)
         }
+    }
+    
+    private func mapGlobalMarketData(data : MarketDataModel?) -> [StatisticModel] {
+        var stats : [StatisticModel] = []
+        guard let data = data else {return stats}
+        let marketCap = StatisticModel(title: "Market Cap", value: data.marketCap, percentageChange: data.marketCapChangePercentage24HUsd)
+        let volume = StatisticModel(title: "24h Volume", value: data.volume)
+        let bitcoinDominance = StatisticModel(title: "BC Dominance", value: data.btcDominance)
+        let profolio = StatisticModel(title: "Portfolio Value", value: "$0.00", percentageChange: 0)
+        stats.append(contentsOf: [
+            marketCap, volume, bitcoinDominance, profolio
+        ])
+        return stats
     }
     
     
