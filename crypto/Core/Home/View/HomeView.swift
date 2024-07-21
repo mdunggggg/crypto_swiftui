@@ -28,7 +28,6 @@ struct HomeView: View {
                 homeHeader
                 HomeStatisticView(showPortfolio: $showPortfolio)
                 SearchBarView(searchText: $vm.searchText)
-                   
                 columnTitles
                 if !showPortfolio {
                     allCoinsList.transition(.move(edge: .leading))
@@ -92,14 +91,53 @@ extension HomeView {
     
     private var columnTitles : some View {
         return HStack{
-            Text("Coin")
+            HStack {
+                Text("Coin")
+                Image(systemName: "chevron.down")
+                    .opacity((vm.sortOption == .rank || vm.sortOption == .rankReverse) ? 1.0 : 0)
+                    .rotationEffect(Angle(degrees: vm.sortOption == .rank ? 0 : 180))
+            }
+            .onTapGesture {
+                withAnimation(.default) {
+                    vm.sortOption = vm.sortOption == .rank ? .rankReverse : .rank
+                }
+            }
             Spacer()
             if showPortfolio {
-                Text("Holding")
+                HStack {
+                    Text("Holdings")
+                    Image(systemName: "chevron.down")
+                        .opacity((vm.sortOption == .holdings || vm.sortOption == .holdingsReverse) ? 1.0 : 0)
+                        .rotationEffect(Angle(degrees: vm.sortOption == .holdings ? 0 : 180))
+                }
+                .onTapGesture {
+                    withAnimation(.default) {
+                        vm.sortOption = vm.sortOption == .holdings ? .holdingsReverse : .holdings
+                    }
+                }
             }
             
-            Text("Price")
+            HStack {
+                Text("Price")
+                Image(systemName: "chevron.down")
+                    .opacity((vm.sortOption == .price || vm.sortOption == .priceReverse) ? 1.0 : 0)
+                    .rotationEffect(Angle(degrees: vm.sortOption == .price ? 0 : 180))
+            }
                 .frame(width: UIScreen.main.bounds.width / 3, alignment: .trailing)
+                .onTapGesture {
+                    withAnimation(.default) {
+                        vm.sortOption = vm.sortOption == .price ? .priceReverse : .price
+                    }
+                }
+            Button {
+                withAnimation(.linear(duration: 2)) {
+                    vm.reloadData()
+                }
+            } label: {
+                Image(systemName: "goforward")
+            }
+            .rotationEffect(Angle(degrees: vm.isLoading ? 360 : 0), anchor: .center)
+
         }
         .font(.caption)
         .foregroundStyle(Color.theme.secondaryText)
