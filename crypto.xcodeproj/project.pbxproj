@@ -35,6 +35,7 @@
 		5341EFAC2C4C008200042356 /* PortfolioContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5341EFAA2C4C008200042356 /* PortfolioContainer.xcdatamodeld */; };
 		5341EFAE2C4C011A00042356 /* PortfolioDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341EFAD2C4C011A00042356 /* PortfolioDataRepository.swift */; };
 		53863EAD2C4D22EA00D11F53 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53863EAC2C4D22EA00D11F53 /* HapticManager.swift */; };
+		53B158B32C514C68000D1EF4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B158B22C514C68000D1EF4 /* DetailView.swift */; };
 		53ECBCCF2C49645D00171810 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECBCCE2C49645D00171810 /* LocalFileManager.swift */; };
 		53ECBCD12C4971CD00171810 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECBCD02C4971CD00171810 /* SearchBarView.swift */; };
 		53ECBCD32C4976A000171810 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECBCD22C4976A000171810 /* UIApplication.swift */; };
@@ -71,6 +72,7 @@
 		5341EFAB2C4C008200042356 /* PortfolioContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortfolioContainer.xcdatamodel; sourceTree = "<group>"; };
 		5341EFAD2C4C011A00042356 /* PortfolioDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataRepository.swift; sourceTree = "<group>"; };
 		53863EAC2C4D22EA00D11F53 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		53B158B22C514C68000D1EF4 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		53ECBCCE2C49645D00171810 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		53ECBCD02C4971CD00171810 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		53ECBCD22C4976A000171810 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -107,13 +109,13 @@
 		531FFB5F2C4577E3002BF9B2 /* crypto */ = {
 			isa = PBXGroup;
 			children = (
+				531FFB602C4577E3002BF9B2 /* cryptoApp.swift */,
 				531FFB702C460978002BF9B2 /* Extensions */,
 				531FFB8D2C466189002BF9B2 /* Utilities */,
 				531FFB8A2C46527E002BF9B2 /* Repository */,
 				531FFB7F2C4615F5002BF9B2 /* Model */,
 				531FFB732C460B48002BF9B2 /* Core */,
 				53ECBCD42C4A5D4600171810 /* Assets.xcassets */,
-				531FFB602C4577E3002BF9B2 /* cryptoApp.swift */,
 				531FFB622C4577E3002BF9B2 /* ContentView.swift */,
 				531FFB662C4577E4002BF9B2 /* Preview Content */,
 			);
@@ -144,6 +146,7 @@
 			children = (
 				531FFB792C460C82002BF9B2 /* Components */,
 				531FFB742C460B57002BF9B2 /* Home */,
+				53B158AF2C514C36000D1EF4 /* Detail */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -239,6 +242,30 @@
 			path = CoinImage;
 			sourceTree = "<group>";
 		};
+		53B158AF2C514C36000D1EF4 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				53B158B12C514C4C000D1EF4 /* View */,
+				53B158B02C514C42000D1EF4 /* ViewModel */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		53B158B02C514C42000D1EF4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				53B158B22C514C68000D1EF4 /* DetailView.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		53B158B12C514C4C000D1EF4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -325,6 +352,7 @@
 				531FFB922C4673DE002BF9B2 /* CoinImageView.swift in Sources */,
 				531FFB7C2C460CB9002BF9B2 /* CircleButtonView.swift in Sources */,
 				53ECBCD32C4976A000171810 /* UIApplication.swift in Sources */,
+				53B158B32C514C68000D1EF4 /* DetailView.swift in Sources */,
 				53863EAD2C4D22EA00D11F53 /* HapticManager.swift in Sources */,
 				531FFB942C4676E5002BF9B2 /* CoinImageRepository.swift in Sources */,
 				531FFB722C46098B002BF9B2 /* Color.swift in Sources */,

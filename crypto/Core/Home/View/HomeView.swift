@@ -74,19 +74,29 @@ extension HomeView {
     private var allCoinsList : some View {
         return List{
             ForEach(vm.allCoins){ coin in
-                CoinRowView(coin: coin, showHoldingsColum: showPortfolio)
+                NavigationLink(value: coin) {
+                    CoinRowView(coin: coin, showHoldingsColum: showPortfolio)
+                }
             }
         }
         .listStyle(.plain)
+        .navigationDestination(for: CoinModel.self) { coin in
+            DetailView(coin: coin)
+        }
     }
     
     private var portfolioCoinsList : some View {
         return List{
             ForEach(vm.portfoliosCoins){ coin in
-                CoinRowView(coin: coin, showHoldingsColum: showPortfolio)
+                NavigationLink(value: coin) {
+                    CoinRowView(coin: coin, showHoldingsColum: showPortfolio)
+                }
             }
         }
         .listStyle(.plain)
+        .navigationDestination(for: CoinModel.self) { coin in
+            DetailView(coin: coin)
+        }
     }
     
     private var columnTitles : some View {
