@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct DetailView: View {
-    
     @StateObject var vm : DetailViewModel
+    @State private var showFullDescription = false
     private let columns : [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -28,11 +28,12 @@ struct DetailView: View {
                 ChartView(coin: vm.coin)
                 overviewTitle
                 Divider()
+                descriptionSection
                 overviewGrid
                 addtionalTitle
                 Divider()
                 additionalGrid
-                
+                websiteSection
             }
             .padding()
         }
@@ -99,6 +100,51 @@ extension DetailView {
                 .frame(width: 25, height: 25)
         }
 
+    }
+    
+    private var descriptionSection : some View {
+        ZStack {
+            if let coinDescription = vm.coinDescription, !coinDescription.isEmpty {
+                VStack(alignment: .leading) {
+                    Text(coinDescription.removingHTMLOccurances)
+                        .lineLimit(showFullDescription ? nil : 3)
+                        .font(.callout)
+                        .foregroundStyle(Color.theme.secondaryText)
+                    Button(action: {
+                        withAnimation(.easeInOut) {
+                            showFullDescription.toggle()
+                        }
+                    }, label: {
+                        Text(showFullDescription ? "Less" : "Read more...")
+                            .font(.caption)
+                            .fontWeight(.bold)
+                            .padding(.vertical, 4)
+                    })
+                    .accentColor(.blue)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
+    }
+    private var websiteSection : some View {
+        VStack(alignment: .leading, spacing: 10){
+            if let websiteURL = vm.websiteURL,
+               let url = URL(string: websiteURL) {
+                Link(destination: url, label: {
+                    Text("Website")
+                })
+            }
+            if let redditURL = vm.redditURL,
+               let url = URL(string: redditURL) {
+                Link(destination: url, label: {
+                    Text("Reddit")
+                })
+            }
+            
+        }
+        .accentColor(.blue)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .font(.headline)
     }
 }
 

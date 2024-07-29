@@ -11,6 +11,7 @@ import SwiftUI
 struct cryptoApp: App {
     
     @StateObject private var vm = HomeViewModel()
+    @State private var showLauchView : Bool = true
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [
@@ -23,11 +24,22 @@ struct cryptoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack{
-                HomeView()
-                    .toolbar(.hidden)
+            ZStack {
+                NavigationStack{
+                    HomeView()
+                        .toolbar(.hidden)
+                }
+                .environmentObject(vm)
+                
+                ZStack {
+                    if showLauchView {
+                        LaunchView(showLaunchView: $showLauchView)
+                            .transition(.move(edge: .leading))
+                    }
+                }
+                .zIndex(2.0)
+                
             }
-            .environmentObject(vm)
         }
     }
 }
