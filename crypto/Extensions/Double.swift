@@ -118,6 +118,11 @@ extension Double {
             return "\(sign)\(self)"
         }
     }
+    
+    func isPositive() -> Bool {
+        return self > 0
+    }
+
 
 }
 
